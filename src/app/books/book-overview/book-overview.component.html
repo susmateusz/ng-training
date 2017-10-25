@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <table class="table table-bordered table-hover table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Author</th>
+            <th>Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of books; let i = index"
+          (click) = "selectBook(book)"
+          [class.table-active]="isBookSelected(book)">
+            <td>{{i+1}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.title}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-6">
+      <app-book-details [book]="selectedBook"></app-book-details>
+      
+      <input type="text" [(ngModel)]="fromInput">
+      <span>{{fromInput}}</span>
+    </div>
+  </div>
+</div>
