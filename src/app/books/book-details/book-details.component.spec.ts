@@ -1,3 +1,4 @@
+import { Book } from './../book';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BookDetailsComponent } from './book-details.component';
@@ -16,6 +17,7 @@ describe('BookDetailsComponent Tests:', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BookDetailsComponent);
     component = fixture.componentInstance;
+    component.book = Book.from('Test author', 'test title');
     fixture.detectChanges();
   });
 
@@ -24,8 +26,8 @@ describe('BookDetailsComponent Tests:', () => {
   });
 
   it('should initialize book', () => {
-    const book = component.currentBook;
-    expect(book.author).toEqual('Robert C. Martin');
+    const book = component.book;
+    expect(book.author).toEqual('Test author');
   });
   
 });
