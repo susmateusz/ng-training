@@ -29,9 +29,13 @@ export class BookService {
     }
 
     return Observable.create((observer: Observer<Book>) => {
+      console.log('Observable was created.');
       if (bookCopy) {
-        observer.next(bookCopy);
-        observer.complete();
+        setTimeout( ()=> {
+          observer.next(bookCopy);
+          observer.complete();
+          console.log('Observable was completed.');
+        }, 1000);
       } else {
         observer.error(`book with id: ${id} not found`);
       }

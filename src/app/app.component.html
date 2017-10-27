@@ -1,1 +1,8 @@
-<app-book-overview></app-book-overview>
+<nav>
+    <ul class="nav nav-pills">
+        <li class="nav-item"><a href [routerLink]="['book-app','book-overview']" class="nav-link" routerLinkActive="active">Book Overview</a></li>
+        <li class="nav-item"><a href [routerLink]="['book-app','book-details']"  class="nav-link" routerLinkActive="active">Book Details</a></li>
+    </ul>
+</nav>
+<router-outlet></router-outlet>
+<footer>This is footer</footer>

@@ -1,3 +1,4 @@
+import { BookDetailsResolver } from './book-details/book-details.resolver';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {BookDetailsComponent} from './book-details/book-details.component';
@@ -12,7 +13,7 @@ import {BookService} from './book.service';
   ],
   declarations: [BookDetailsComponent, BookOverviewComponent],
   exports: [BookDetailsComponent, BookOverviewComponent],
-  providers: [BookService]
+  providers: [BookService, BookDetailsResolver]
 })
 export class BooksModule {
 }
